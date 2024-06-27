@@ -30,6 +30,7 @@ const server = http.createServer((req, res) => {
         console.log(req.body);
       }
 
+      // Return the `resBody` object as JSON in the body of the response
       if (req.headers["content-type"] === "application/json") {
         req.body = JSON.parse(reqBody);
         console.log(req.body["name"])
@@ -40,11 +41,10 @@ const server = http.createServer((req, res) => {
       };
     }
     
-
-    // Return the `resBody` object as JSON in the body of the response
+    
   });
 });
 
-const port = 5000;
+const port = 8000;
 
 server.listen(port, () => console.log('Server is listening on port', port));
